@@ -1,0 +1,17 @@
+<view class="bkg">
+    <!-- 腾讯视频素材来源：央视新闻，共青团中央，人民日报等 -->
+    <view class="article__h1">video页</view>
+    <block wx:for="{{videos}}" wx:key="vid">
+        <view>
+            <view class="item">
+                <view>
+                    <text class="info">{{item.date}}/{{item.author}}</text>
+                </view>
+                <view class="article__h2">{{item.title}}</view>
+                <block>
+                <txv-video vid="{{item.vid}}" playerid="txv1"></txv-video>
+                </block>
+            </view>
+        </view>
+    </block>
+</view>

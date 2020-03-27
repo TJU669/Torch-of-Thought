@@ -1,5 +1,7 @@
 {
   "pages": [
+    
+    "pages/outer/video",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -10,5 +12,12 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.3.10",
+      "provider": "wxa75efa648b60994b"
+    }
+  }
 }
