@@ -1,8 +1,15 @@
 {
   "pages": [
+    "pages/popSci/popSci",
+    "pages/patriotism/patriotism",
     
-    "pages/outer/video",
+    "pages/empty/empty",
+    "pages/videoPlay/videoPlay",
+    "pages/bili/bili",
+    "pages/wynews/wynews",
+    "pages/wydetails/wydetails",
     "pages/index/index",
+    "pages/outer/video",
     "pages/logs/logs"
   ],
   "window": {
@@ -11,9 +18,24 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
+  "tabBar":{
+    "list":[{
+      "pagePath":"pages/popSci/popSci",
+      "text": "未定义",
+      "iconPath": "icons/icon0_0.png",
+      "selectedIconPath":"icons/icon0_1.png"
+    },
+    {
+      "pagePath": "pages/empty/empty",
+      "text": "个人中心",
+      "iconPath": "icons/icon1_0.png",
+      "selectedIconPath": "icons/icon1_1.png"
+    }]
+    
+  },
+
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-
   "plugins": {
     "tencentvideo": {
       "version": "1.3.10",

@@ -1,0 +1,15 @@
+<!--pages/wynews/wynews.wxml-->
+<!-- 视频列表 -->
+<view class="container">
+    <view ckass="video_wrap">
+        <navigator url="../wydetails/wydetails?docid={{item.docid}}" class="video_item" wx:for="{{videoList}}" wx:key="docid">
+            <!-- 图片容器 -->
+            <view class="video_img">
+                <!-- 图片 -->
+                <image src="{{item.imgsrc}}"></image>
+                <!-- 标题 -->
+                <view class="video_title">{{item.title}}</view>
+            </view>
+        </navigator>
+    </view>
+</view>
