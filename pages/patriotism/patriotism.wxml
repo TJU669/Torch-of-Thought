@@ -8,7 +8,7 @@
             <view class="image_container">
                 <!-- 图片 -->
                 <navigator url="../videoPlay/videoPlay?vid={{item.id}}">
-                    <image style="border-radius:8px" mode='widthFix' src="{{item.pic}}"></image>
+                    <image style="width:100%" mode='aspectFit' src="{{item.pic}}"></image>
                 </navigator>
                 <!-- 标题 -->
                 <view class="title">{{item.title}}</view>

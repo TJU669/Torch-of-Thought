@@ -1,29 +1,29 @@
 /* pages/outer/video.wxss */
 .bkg {
-    background-color: rgb(241, 241, 241);
+    background-color: #f1f1f1;
   }
   .article__h1 {
     text-align: center;
-    font-size: 18px;
-    letter-spacing: 0px;
+    font-size: 18rpx;
+    letter-spacing: 0rpx;
     font-family:"Microsoft Yahei";
-    padding: 8px;
+    padding: 8rpx;
   }
   .info {
-    font-size: 16px;
+    font-size: 16rpx;
     font-weight: 400;
-    padding-bottom: 5px;
+    padding-bottom: 5rpx;
     font-family:"Microsoft Yahei Light";
   }
   .article__h2 {
-    font-size: 16px;
-    padding-bottom: 5px;
+    font-size: 16rpx;
+    padding-bottom: 5rpx;
     font-family:"Microsoft Yahei Light";
     font-weight: 500;
   }
   .item {
-    margin: 10px;
-    border-radius: 10px;
-    padding: 8px;
+    margin: 10rpx;
+    border-radius: 10rpx;
+    padding: 8rpx;
     background-color: white;
   }

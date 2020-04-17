@@ -1,16 +1,30 @@
-.tabs{}
+.tabs{
+  position:fixed;
+  top:0;
+  width: 750rpx;
+  display: block;
+  /* position: fixed; */
+  top: 0;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+}
 .tabs_title{
   display: flex;
-  padding: 10rpx 0;
+  padding: 20rpx 50rpx;
 }
 .title_item{
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right: 20rpx;
+  /* z-index: 1; */
 }
 .active{
   color:red;
   border-bottom: 5rpx solid currentColor;
 }
-.tabs_content{}
+.tabs_content{
+  position: fixed;
+  z-index: 1;
+}
