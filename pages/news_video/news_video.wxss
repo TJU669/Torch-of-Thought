@@ -1,0 +1,53 @@
+page{
+  color: #000;
+  padding: 10rpx;
+}
+
+.head{
+  display: flex;
+  flex-direction: row;
+}
+
+.right_blank {
+   flex: 1;
+   align-items:center;
+}
+ 
+/* 跳转到视频页的按钮 */
+.btn{
+  font-size: 35rpx;
+  margin-top: 85rpx;
+  position: relative;
+  align-items:center;
+}
+
+/* 视频列表 */
+.main{
+  display: flex;
+  flex-wrap: wrap; 
+  margin-top: 30rpx;
+  justify-content: space-between;
+}
+
+.video_item{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.video_img_wrap{
+  width: 38%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video_img_wrap image{
+  width: 90%;
+  border-radius: 15rpx;
+}
+
+.video_title{
+  width: 60%;
+  font-size: 30rpx;
+}

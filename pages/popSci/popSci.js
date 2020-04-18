@@ -87,7 +87,9 @@ Page({
       console.log("无需跳转")
     }
     else if(index===1){
-      console.log("跳转到要闻页");
+      wx.reLaunch({
+        url: "../news_text/news_text",
+      });
     }
     else if(index===2){
       wx.reLaunch({

@@ -2,7 +2,6 @@
   "pages": [
     "pages/popSci/popSci",
     "pages/patriotism/patriotism",
-    
     "pages/empty/empty",
     "pages/videoPlay/videoPlay",
     "pages/bili/bili",
@@ -10,7 +9,10 @@
     "pages/wydetails/wydetails",
     "pages/index/index",
     "pages/outer/video",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/news_text/news_text",
+    "pages/news_text_detail/news_text_detail",
+    "pages/news_video/news_video"
   ],
   "window": {
     "backgroundTextStyle": "light",

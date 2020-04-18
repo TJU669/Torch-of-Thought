@@ -1,0 +1,27 @@
+<Tabs tabs="{{tabs}}" binditemChange="handleItemChange"></Tabs>
+<view class="head">
+  <text class="left_blank"></text>
+  <text decode='true' class="btn" style="width:200rpx" bindtap="news_text2video">视频特辑 &gt;</text>
+</view>
+
+<view class="main">
+  <!-- 新闻列表 -->
+    <navigator url="../news_text_detail/news_text_detail?src={{item.url}}" class="news_item" wx:for="{{newsList}}" wx:key="index">
+      <!-- 图片容器 -->
+      <view class="news_img_wrap">
+        <image src="{{item.image}}" mode="widthFix"></image>
+      </view>
+      <!-- 详情 -->
+      <view class="news_info">
+        <!-- 标题 -->
+        <view class="news_title">
+          {{item.title}}
+        </view>
+        <!-- 发布时间 -->
+        <view class="news_date">
+          {{item.focus_date}}
+        </view>
+      </view>
+    </navigator>
+</view>
+

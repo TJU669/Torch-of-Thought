@@ -4,8 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    videoList: [],
-    tabs:[
+    // 新闻列表数据
+    newsList: [],
+    tabs: [
       {
         id: 0,
         name: "科普",
@@ -14,45 +15,35 @@ Page({
       {
         id: 1,
         name: "要闻",
-        isActive: false
+        isActive: true
       },
       {
         id: 2,
         name: "（爱国）",
-        isActive: true
+        isActive: false
       }
     ],
   },
 
-  /** 
-   * 获取视频列表
-  */
-  getVideoList() {
-    let that = this;
-    // 用来装视频列表
-    var destUrl = 'https://s.video.qq.com/get_playsource?id=4ul17huulawkvh2&plat=2&type=4&data_type=2&video_type=22&range=1-38&plname=qq&otype=json&num_mod_cnt=20&callback=_jsonp_2_9421&_t=1586792804357';
-    var videoList = [];
-    // return new Promise(function (resolve) {
+  /**
+   * 获取新闻列表
+   */
+  getNewsList(){
+    let that=this;
     wx.request({
-      url: destUrl,
-      success: function (res) {
-        //去除外面的前缀，并在末尾加'###'，为了下一步去除末尾的多余字符
-        var dataPreJson = res.data.replace(/_jsonp_2_9421\(/, '') + "###";
-        dataPreJson = dataPreJson.replace(/\)###/, '');
-        //json形式
-        var data = JSON.parse(dataPreJson);
-        videoList = data.PlaylistItem.videoPlayList;
+      url: 'https://news.cctv.com/2019/07/gaiban/cmsdatainterface/page/world_2.jsonp?cb=t&cb=world',
+      success(res){
+        // console.log(res)
         
+        var dataPreJson = res.data.replace(/world\(/, '');
+        dataPreJson = dataPreJson.replace(/}\)/,'}');
+        
+        var data = JSON.parse(dataPreJson);
         that.setData({
-          videoList: videoList
+          newsList: data.data.list
         })
       }
     })
-
-    //睡眠函数 单位毫秒
-    function sleep(d) {
-      for (var t = Date.now(); Date.now() - t <= d;);
-    }
   },
 
   // 自定义事件 用来接收子组件传递的数据的
@@ -64,76 +55,81 @@ Page({
     this.setData({
       tabs
     })
-    if(index===0){
+    if (index === 0) {
       wx.reLaunch({
         url: "../popSci/popSci",
       })
     }
-    else if(index===1){
-      wx.reLaunch({
-        url: "../news_text/news_text",
-      })
-    }
-    else if(index===2){
+    else if (index === 1) {
       console.log("无需跳转");
+    }
+    else if (index === 2) {
+      wx.reLaunch({
+        url: "../patriotism/patriotism",
+      })
     }
   },
 
-  // 从str中找出每一个subStr出现位置的下标，放在ps数组中
+
+  news_text2video(){
+    wx.navigateTo({
+      url: '../news_video/news_video',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getVideoList();
+    this.getNewsList();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    
   }
 })
