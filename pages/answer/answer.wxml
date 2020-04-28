@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="main" >
+<view style="background: url('../../image/answerBg.jpg') center center no-repeat; width:100%; height:100%; background-size: cover; top:50px; justify-content: center;">
+  <view class="header"></view>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style='top: 50px'> 获取头像昵称 </button>
+    <block wx:else>
+      <view class="userinfo-avator-wrap">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      </view>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="masked" style="text_align: center">{{motto}}</text>
+  <navigator style = "color: #CDB03B;" hover-class="navigator-hover">规则</navigator>
+   <navigator style = "color: #CDB03B; padding: 40rpx"  hover-class="navigator-hover">错题集</navigator>   
+   <navigator style = "color: #CDB03B;" hover-class="navigator-hover">收藏夹</navigator>
+
+  </view>
+</view>
+</view>

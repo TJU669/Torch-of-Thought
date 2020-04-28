@@ -1,7 +1,7 @@
 <!-- 疫情科普列表页 -->
 <Tabs tabs="{{tabs}}" binditemChange="handleItemChange"></Tabs>
 <view class="qqcontainer">
-<image class="bkg" mode='widthFix' src="../image/tx_bkg.jpg"></image>
+<image class="bkg" mode='widthFix' src="../../image/tx_bkg.jpg"></image>
     <view class="video_wrap">
         <view wx:for="{{videoList}}" wx:key="id">
             <!-- 图片容器 -->

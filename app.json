@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/answer/answer",
+    "pages/rule/rule",
     "pages/popSci/popSci",
     "pages/patriotism/patriotism",
     "pages/empty/empty",
@@ -28,11 +30,18 @@
       "selectedIconPath":"icons/icon0_1.png"
     },
     {
-      "pagePath": "pages/empty/empty",
-      "text": "个人中心",
+      "pagePath": "pages/answer/answer",
+      "text": "答题",
       "iconPath": "icons/icon1_0.png",
       "selectedIconPath": "icons/icon1_1.png"
-    }]
+    },
+    {
+      "pagePath": "pages/empty/empty",
+      "text": "个人中心",
+      "iconPath": "icons/icon2_0.png",
+      "selectedIconPath": "icons/icon2_1.png"
+    }
+  ]
     
   },
 
