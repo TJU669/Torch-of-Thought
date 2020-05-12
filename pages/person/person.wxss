@@ -1,0 +1,6 @@
+/* pages/person/person.wxss */
+image{height:50px}
+
+page {
+  background-color: #F5F5F5;
+} 

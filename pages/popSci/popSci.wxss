@@ -16,6 +16,7 @@
   height:100%;
   z-index:-1;
   opacity: 0.6;
+  background-size:100% 100%;
 }
 .image_container {
   /* display: block; */

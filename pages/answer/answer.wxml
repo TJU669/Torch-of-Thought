@@ -1,8 +1,26 @@
-<!--index.wxml-->
 <view class="main" >
-<view style="background: url('https://tva1.sinaimg.cn/large/007S8ZIlly1gepx1ul3tzj30hs0vmabf.jpg') center center no-repeat; width:100%; height:100%; background-size: cover; top:50px; justify-content: center;">
-  <view class="header"></view>
-  <view class="userinfo">
+  <image class='bkg' mode='widthFix' src="https://tva1.sinaimg.cn/large/007S8ZIlly1gepx1ul3tzj30hs0vmabf.jpg" mode="aspectFill"></image>
+
+  <view class="usermotto">
+    <!-- <text class="masked" style="text_align: center">{{motto}}</text> -->
+    <view class="button">
+      <navigator class="navi" hover-class="navigator-hover">开始答题</navigator>
+    </view>
+    <view class="button">
+      <navigator class="navi" url="../rule/rule" hover-class="navigator-hover">答题说明</navigator>
+    </view>
+    <view class="button">
+      <navigator class="navi"  hover-class="navigator-hover">错题集</navigator>   
+    </view>
+    <view class="button">
+      <navigator class="navi" hover-class="navigator-hover">收藏夹</navigator>
+    </view>
+  </view>
+
+
+</view>
+
+  <!-- <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style='top: 50px'> 获取头像昵称 </button>
     <block wx:else>
       <view class="userinfo-avator-wrap">
@@ -10,13 +28,4 @@
       </view>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
-  </view>
-  <view class="usermotto">
-    <text class="masked" style="text_align: center">{{motto}}</text>
-  <navigator style = "color: #CDB03B;" hover-class="navigator-hover">规则</navigator>
-   <navigator style = "color: #CDB03B; padding: 40rpx"  hover-class="navigator-hover">错题集</navigator>   
-   <navigator style = "color: #CDB03B;" hover-class="navigator-hover">收藏夹</navigator>
-
-  </view>
-</view>
-</view>
+  </view> -->

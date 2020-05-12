@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/person/person",
     "pages/answer/answer",
     "pages/rule/rule",
     "pages/popSci/popSci",
     "pages/patriotism/patriotism",
-    "pages/empty/empty",
+    
     "pages/videoPlay/videoPlay",
-    "pages/bili/bili",
     "pages/wynews/wynews",
     "pages/wydetails/wydetails",
     "pages/index/index",
@@ -36,7 +36,7 @@
       "selectedIconPath": "icons/icon1_1.png"
     },
     {
-      "pagePath": "pages/empty/empty",
+      "pagePath": "pages/person/person",
       "text": "个人中心",
       "iconPath": "icons/icon2_0.png",
       "selectedIconPath": "icons/icon2_1.png"

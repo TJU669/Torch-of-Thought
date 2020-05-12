@@ -1,35 +1,63 @@
-/**index.wxss**/
+.bkg{
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+  top:0;
+  left:0;
+  /*透明度*/
+  opacity: 0.9;
+}
 
-.header {
+/* .header {
   position: fixed;
   top: 0;
   height: 100rpx;
   width: 100%;
-  /*background-color: red;*/
+  background-color: red;
   border-radius: 0 0 80% 80%;
-}
+} */
 .masked {
-            margin-top: 100rpx;
-            text-align: center;
-            display: block;
-            /*渐变背景*/
-            background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%,
-            #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);
-            color: transparent; /*文字填充色为透明*/
-            -webkit-text-fill-color: transparent;
-            background-clip: text;          /*背景剪裁为文字，只将文字显示为背景*/
-            background-size: 200% 100%;            /*背景图片向水平方向扩大一倍，这样background-position才有移动与变化的空间*/
-            /* 动画 */
-            animation: masked-animation 4s infinite linear;
-        }
-        @keyframes masked-animation {
-            0% {
-                background-position: 0 0;   /*background-position 属性设置背景图像的起始位置。*/
-            }
-            100% {
-                background-position: -100% 0;
-            }
-        }
+  margin-top: 100rpx;
+  text-align: center;
+  display: block;
+  /*渐变背景*/
+  background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%,
+  #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);
+  color: transparent; /*文字填充色为透明*/
+  -webkit-text-fill-color: transparent;
+  background-clip: text;          /*背景剪裁为文字，只将文字显示为背景*/
+  background-size: 200% 100%;            /*背景图片向水平方向扩大一倍，这样background-position才有移动与变化的空间*/
+  /* 动画 */
+  animation: masked-animation 4s infinite linear;
+}
+@keyframes masked-animation {
+    0% {
+        background-position: 0 0;   /*background-position 属性设置背景图像的起始位置。*/
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.button {
+  background-color: #FFF8DC;
+  margin: auto;
+  margin-bottom: 60rpx;
+  text-align: center;
+  line-height: 30rpx;
+  height: 100rpx;
+  width: 250rpx;
+  opacity: 0.6;
+}
+
+.navi {
+  color: #D02090;
+  padding: 40rpx;
+  font-size:35rpx;
+  font-weight: bold;
+}
 
 .userinfo {
   display: flex;
@@ -63,7 +91,7 @@
 }
 
 .usermotto {
-  margin-top: 100rpx;
+  margin-top: 300rpx;
   text-align: center;
 }
  
