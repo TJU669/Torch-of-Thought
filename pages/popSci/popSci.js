@@ -29,45 +29,37 @@ Page({
   */
   getVideoList() {
     let that = this;
-    // 用来装视频列表
-    var destUrl = 'https://s.video.qq.com/get_playsource?id=mzc002007lhxy9e&plat=2&type=4&data_type=2&video_type=23&range=1-100&plname=qq&otype=json&num_mod_cnt=20&callback=_jsonp_2_97dd&_t=1586576910256';
+    
     var videoList = [];
-    // return new Promise(function (resolve) {
-    wx.request({
-      url: destUrl,
-      success: function (res) {
-        //去除外面的前缀，并在末尾加'###'，为了下一步去除末尾的多余字符
-        var dataPreJson = res.data.replace(/_jsonp_2_97dd\(/, '') + "###";
-        dataPreJson = dataPreJson.replace(/\)###/, '');
-        //json形式
-        var data = JSON.parse(dataPreJson);
-        videoList = data.PlaylistItem.videoPlayList;
-
-      }
+    var videoList2 =[];
+    var urls = ['https://s.video.qq.com/get_playsource?id=mzc002007lhxy9e&plat=2&type=4&data_type=2&video_type=23&range=1-99&plname=qq&otype=json&num_mod_cnt=20&callback=_jsonp_2_17af&_t=1589353018196', 'https://s.video.qq.com/get_playsource?id=mzc002007lhxy9e&plat=2&type=4&data_type=2&video_type=23&range=100-198&plname=qq&otype=json&num_mod_cnt=20&callback=_jsonp_3_d969&_t=1589353046986', 'https://s.video.qq.com/get_playsource?id=mzc002007lhxy9e&plat=2&type=4&data_type=2&video_type=23&range=199-203&plname=qq&otype=json&num_mod_cnt=20&callback=_jsonp_4_15db&_t=1589353082295'];
+    
+    for(var i =0; i<urls.length; i++){
+      wx.request({
+        url: urls[i],
+        success: function (res) {
+          
+          var result = res.data;
+          //去除外面的前缀，并在末尾加'###'，为了下一步去除末尾的多余字符
+          var callbackIndex = result.indexOf('_jsonp_');
+          var callback = result.substr(callbackIndex, 14);
+          var dataPreJson = res.data.replace(callback, '') + "###";
+          //去除末尾的右括号
+          dataPreJson = dataPreJson.replace(/\)###/, '');
+          // json形式
+          var data = JSON.parse(dataPreJson);
+          videoList2 = data.PlaylistItem.videoPlayList;
+          videoList = videoList.concat(videoList2)
+          
+          that.setData({
+            videoList: videoList
+          })
+          console.log(videoList)
+        }
     })
+      sleep(100);
+    }
 
-    sleep(100);
-    destUrl = 'https://s.video.qq.com/get_playsource?id=mzc002007lhxy9e&plat=2&type=4&data_type=2&video_type=23&range=101-197&plname=qq&otype=json&num_mod_cnt=20&callback=_jsonp_3_d9fd&_t=1586586149872';
-    wx.request({
-      url: destUrl,
-      success: function (res) {
-        //去除外面的前缀，并在末尾加'###'，为了下一步去除末尾的多余字符
-        var dataPreJson = res.data.replace(/_jsonp_3_d9fd\(/, '') + "###";
-        dataPreJson = dataPreJson.replace(/\)###/, '');
-        //json形式
-        var data = JSON.parse(dataPreJson);
-        var videoList2 = [];
-        videoList2 = data.PlaylistItem.videoPlayList;
-        // console.log(videoList)
-        //第二页数据合并到第一页中
-        videoList = videoList.concat(videoList2)
-        console.log(videoList)
-        that.setData({
-          videoList: videoList
-        })
-
-      }
-    })
     //睡眠函数 单位毫秒
     function sleep(d) {
       for (var t = Date.now(); Date.now() - t <= d;);

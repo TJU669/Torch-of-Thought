@@ -27,33 +27,44 @@ Page({
   /** 
    * 获取视频列表
   */
-  getVideoList() {
-    let that = this;
-    // 用来装视频列表
-    var destUrl = 'https://s.video.qq.com/get_playsource?id=4ul17huulawkvh2&plat=2&type=4&data_type=2&video_type=22&range=1-38&plname=qq&otype=json&num_mod_cnt=20&callback=_jsonp_2_9421&_t=1586792804357';
-    var videoList = [];
-    // return new Promise(function (resolve) {
+ getVideoList() {
+  let that = this;
+  
+  var videoList = [];
+  var videoList2 =[];
+  var urls = ['https://s.video.qq.com/get_playsource?id=4ul17huulawkvh2&plat=2&type=4&data_type=2&video_type=22&range=1-38&plname=qq&otype=json&num_mod_cnt=20&callback=_jsonp_2_7121&_t=1589355606337'];
+  
+  for(var i =0; i<urls.length; i++){
     wx.request({
-      url: destUrl,
+      url: urls[i],
       success: function (res) {
+        
+        var result = res.data;
         //去除外面的前缀，并在末尾加'###'，为了下一步去除末尾的多余字符
-        var dataPreJson = res.data.replace(/_jsonp_2_9421\(/, '') + "###";
+        var callbackIndex = result.indexOf('_jsonp_');
+        var callback = result.substr(callbackIndex, 14);
+        var dataPreJson = res.data.replace(callback, '') + "###";
+        //去除末尾的右括号
         dataPreJson = dataPreJson.replace(/\)###/, '');
-        //json形式
+        // json形式
         var data = JSON.parse(dataPreJson);
-        videoList = data.PlaylistItem.videoPlayList;
+        videoList2 = data.PlaylistItem.videoPlayList;
+        videoList = videoList.concat(videoList2)
         
         that.setData({
           videoList: videoList
         })
+        console.log(videoList)
       }
-    })
+  })
+    sleep(100);
+  }
 
-    //睡眠函数 单位毫秒
-    function sleep(d) {
-      for (var t = Date.now(); Date.now() - t <= d;);
-    }
-  },
+  //睡眠函数 单位毫秒
+  function sleep(d) {
+    for (var t = Date.now(); Date.now() - t <= d;);
+  }
+},
 
   // 自定义事件 用来接收子组件传递的数据的
   handleItemChange(e) {
