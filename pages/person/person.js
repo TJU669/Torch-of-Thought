@@ -44,7 +44,7 @@ Page({
    */
   onLoad: function () {
     let that = this;
-    if(!this.data.hasUserInfo){
+    if(!this.data.hasUserInfo && !app.globalData.userInfo){
       wx.showModal({
         title: '温馨提示',
         content: '稍后请您选择允许登录。\r\n如果拒绝登录，您可能无法正常使用功能。',
