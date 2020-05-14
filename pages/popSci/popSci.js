@@ -5,6 +5,8 @@ Page({
    */
   data: {
     videoList: [],
+    currentList: [],
+    currentPage: 1,
     tabs:[
       {
         id: 0,
@@ -52,11 +54,11 @@ Page({
           videoList = videoList.concat(videoList2)
           
           that.setData({
-            videoList: videoList
+            videoList: videoList,
+            currentList: videoList.slice(0,10)
           })
-          console.log(videoList)
         }
-    })
+      })
       sleep(100);
     }
 
@@ -136,7 +138,27 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    console.log("触底了")
+    //获取当前页索引和视频列表
+    var pageIndex = this.data.currentPage;
+    var cl = [];
+    cl = this.data.currentList;
 
+    //加载下一页的数据
+    pageIndex +=1;
+    var pageSize = 10;
+    var start = (pageIndex - 1) * pageSize;
+    var end = start + pageSize;
+
+    //和之前的数据连在一起
+    cl = cl.concat(this.data.videoList.slice(start, end));
+
+    //设置
+    this.setData({
+      currentList: cl,
+      currentPage: pageIndex
+    })
+    console.log(cl)
   },
 
   /**
