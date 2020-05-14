@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/patriotism/patriotism",
     "pages/popSci/popSci",
-    "pages/person/person",
     "pages/answer/answer",
+    "pages/person/person",
+    "pages/patriotism/patriotism",
+         
     "pages/rule/rule",
     
     "pages/videoPlay/videoPlay",

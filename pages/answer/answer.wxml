@@ -1,7 +1,12 @@
 <view class="main" >
   <image class='bkg' mode='widthFix' src="https://tva1.sinaimg.cn/large/007S8ZIlly1gepx1ul3tzj30hs0vmabf.jpg" mode="aspectFill"></image>
 
-  <view class="usermotto">
+  <button wx:if="{{!hasUserInfo && canIUse}}" class='btn1' open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+			<image class='btnImg' src='../../image/wechat.png'></image>
+			<view>登录</view>
+  </button>
+    
+  <view wx:else class="usermotto">
     <!-- <text class="masked" style="text_align: center">{{motto}}</text> -->
     <view class="button">
       <navigator class="navi" hover-class="navigator-hover">开始答题</navigator>

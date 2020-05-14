@@ -10,6 +10,16 @@ Page({
   },
   onLoad: function () {
     var that = this;
+    if(!this.data.hasUserInfo){
+      wx.showModal({
+        title: '温馨提示',
+        content: '稍后请您选择允许登录。\r\n如果拒绝登录，您可能无法正常使用功能。',
+        showCancel: false,
+        cancelText: '取消',
+        confirmText: "了解",//默认是“确定”
+      });
+    }
+    
     //console.log(that);
     if (app.globalData.userInfo) {
       this.setData({

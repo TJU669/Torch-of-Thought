@@ -1,6 +1,51 @@
 /* pages/person/person.wxss */
-image{height:50px}
+image{height:60px}
 
 page {
   background-color: #F5F5F5;
 } 
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 50rpx;
+  height: 50rpx;
+  /* margin: 20rpx;
+  border-radius: 50%; */
+}
+
+.userinfo-nickname {
+  color: #000000;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+.btn1 {
+  /* width: 80%; */
+  margin-top: 100rpx;
+  background-color: #57be6b;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnImg {
+  margin-right: 20rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn1::after {
+  border-radius: 98rpx;
+  border: 0; 
+}

@@ -59,41 +59,6 @@
   font-weight: bold;
 }
 
-.userinfo {
-  display: flex;
-  border-radius: 5rpx;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 100rpx;
-}
-
-.userinfo-avator-wrap {
-  width: 134rpx;
-  height: 134rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background-color: #f8f7f7;
-  top:50px;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  border-radius: 50%;
-  top: 50px;
-}
-
-.userinfo-nickname {
-  color: #ccc;
-  top:50px;
-}
-
-.usermotto {
-  margin-top: 300rpx;
-  text-align: center;
-}
  
 .navigator {
   padding: 40rpx;
@@ -109,4 +74,50 @@
 }
 .block{
   display: block
+}
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 50rpx;
+  height: 50rpx;
+  /* margin: 20rpx;
+  border-radius: 50%; */
+}
+
+.userinfo-nickname {
+  color: #000000;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+.btn1 {
+  /* width: 80%; */
+  margin-top: 60%;
+  background-color: #87CEFA;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnImg {
+  margin-right: 20rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn1::after {
+  border-radius: 98rpx;
+  border: 0; 
 }

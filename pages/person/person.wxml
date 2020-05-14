@@ -1,14 +1,27 @@
 <view class="page" data-weui-theme="{{theme}}">
 	<view class="page__bd">
-		<view class="weui-cells">
 
+		<!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
+
+		<button wx:if="{{!hasUserInfo && canIUse}}" class='btn1' open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+			<image class='btnImg' src='../../image/wechat.png'></image>
+			<view>登录</view>
+		</button>
+
+
+
+		<view wx:else class="weui-cells">
+			
 			<view class="weui-cell weui-cell_active">
+				<!-- 用户头像 -->
 				<view class="weui-cell__hd" style="position: relative; margin-right: 10px;">
-					<image src="https://tva1.sinaimg.cn/large/007S8ZIlly1geq71qqtnaj304g04g742.jpg" style="width: 50px; display: block;"></image>
+					<image src="{{userInfo.avatarUrl}}" mode="cover" style="width: 60px; display: block;"></image>
 					<!-- <text class="weui-badge" style="position: absolute; top: -0.4em; right: -0.4em;">8</text> -->
 				</view>
+				
+				<!-- 用户昵称 -->
 				<view class="weui-cell__bd">
-					<view>{{name}}</view>
+					<view class="userinfo-nickname">{{userInfo.nickName}}</view>
 					<view style="font-size: 13px; color: #888;">摘要信息</view>
 				</view>
 			</view>
