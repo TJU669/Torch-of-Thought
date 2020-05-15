@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/popSci/popSci",
     "pages/answer/answer",
     "pages/person/person",
@@ -20,7 +21,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "科普小程序",
     "navigationBarTextStyle": "black"
   },
   "tabBar":{
