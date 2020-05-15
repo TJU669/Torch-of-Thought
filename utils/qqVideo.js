@@ -90,7 +90,7 @@ const qqVideo = {
 //参数分别为 streamId, vid, .mp4字符串, 请求url, 流序号, 
 function requestVideoUrls(part_format_id, vid, fileName, host, videoCount) {
   var keyApi = "https://vv.video.qq.com/getkey?otype=json&platform=11&format=" + part_format_id + "&vid=" + vid + "&filename=" + fileName + "&appver=3.2.19.333"
-  // console.log(keyApi)
+  console.log(keyApi)
   return new Promise(function (resolve) {
     wx.request({
       url: keyApi,

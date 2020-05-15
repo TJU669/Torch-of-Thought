@@ -1,5 +1,7 @@
 <!-- video详情页（播放页） -->
 <view class="pageView">
-<video id="myVideo" style="width:100%" objectFit="cover" mode='aspectFit' autoplay="true" bindended="playEnd" src="{{videUrl}}">
+	<video id="myVideo" style="width:100%" objectFit="cover" mode='aspectFit' autoplay="true" bindended="playEnd" src="{{videUrl}}">
 	</video>
+	<view class="article__h1" style="color: #ffffff">{{videTitle}}</view>
+
 </view>

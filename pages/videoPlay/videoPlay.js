@@ -3,6 +3,7 @@ var part_urls = {};
 var videoPage;
 var pageArr = new Array()
 import qqVideo from "../../utils/qqVideo.js"
+import videoTitle from "../../utils/videoTitle.js"
 
 Page({
   onLoad: function (options) {
@@ -30,15 +31,25 @@ Page({
         pageArr.push(i);
         part_urls[indexStr] = response[i - 1];
       }
+      // console.log(response)
       that.setData({
         videUrl: response[0],
       });
     });
+
+    //获取视频标题
+    videoTitle.getVideoes(vid).then(function (response){
+      // console.log(response)
+      that.setData({
+        videTitle: response,
+      });
+    });
+
   },
+
   // 因为视频超过10分钟之后，会分段，所以当视频为多段的时候，
   // 自动播放下一段视频
   playEnd: function () {
-
     if (videoPage >= parseInt(pageArr.length)) {
       // part_urls = {};
       videoPage = 1;
@@ -60,6 +71,7 @@ Page({
   },
   onShow: function () {
     // 页面显示
+    // console.log(this.data)
   },
   onHide: function () {
     // 页面隐藏
