@@ -7,7 +7,7 @@
 <view class="main">
   <!-- 视频列表 -->
   <view class="video_wrap">
-    <navigator url="../videoPlay/videoPlay?vid={{item.id}}" class="video_item" wx:for="{{videoList}}" wx:key="index">
+    <navigator url="../videoPlay/videoPlay?vid={{item.id}}" class="video_item" wx:for="{{currentList}}" wx:key="index">
       <!-- 图片容器 -->
       <view class="video_img_wrap">
         <image src="{{item.pic}}" mode="widthFix"></image>

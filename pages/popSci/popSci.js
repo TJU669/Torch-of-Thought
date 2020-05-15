@@ -139,8 +139,15 @@ Page({
    */
   onReachBottom: function () {
     console.log("触底了")
-    //睡眠0.5秒，等待加载
-    for (var t = Date.now(); Date.now() - t <= 500;);
+    wx.showLoading({
+      title: '加载中',
+
+    });
+    setTimeout(()=>{
+      wx.hideLoading()
+    }, 1000)
+    //睡眠1秒，等待加载
+    for (var t = Date.now(); Date.now() - t <= 100;);
     //获取当前页索引和视频列表
     var pageIndex = this.data.currentPage;
     var cl = [];

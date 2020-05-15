@@ -50,4 +50,5 @@ page{
 .video_title{
   width: 60%;
   font-size: 30rpx;
+  margin-right:35rpx;
 }

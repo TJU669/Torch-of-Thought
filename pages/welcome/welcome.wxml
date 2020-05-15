@@ -6,6 +6,6 @@
 <!--页面根标签-->
 	<image class='background' src='https://tva1.sinaimg.cn/large/007S8ZIlly1get5evnpupj30u01r1duw.jpg'></image>
   
-  <canvas canvas-id="canvas" style='width:1200rpx;height: 100vh'></canvas>
+  <canvas canvas-id="canvas" style='width:100%;height: 100vh'></canvas>
   <button class='btn1'style="width: 100%; bottom:200rpx" bindtap='goToMainPage'  animation="{{animationData}}">开始</button>
 </view> 
