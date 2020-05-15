@@ -9,7 +9,7 @@
   <view wx:else class="usermotto">
     <!-- <text class="masked" style="text_align: center">{{motto}}</text> -->
     <view class="button">
-      <navigator class="navi" hover-class="navigator-hover">开始答题</navigator>
+      <navigator class="navi" url="../question/question" hover-class="navigator-hover">开始答题</navigator>
     </view>
     <view class="button">
       <navigator class="navi" url="../rule/rule" hover-class="navigator-hover">答题说明</navigator>
