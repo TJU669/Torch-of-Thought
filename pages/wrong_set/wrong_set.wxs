@@ -1,0 +1,15 @@
+var filter = {
+  numberToalp: function (value) {
+    var voc = ''
+    // console.log(value)
+    if (value == 1)  voc = 'A';
+    else if (value == 2)  voc = 'B';
+    else if (value == 3)  voc = 'C';
+    else  voc = 'D'
+    // console.log(voc)
+    return voc
+  }
+}
+module.exports = {
+  numberToalp: filter.numberToalp
+}

@@ -1,5 +1,6 @@
 {
   "pages": [
+
     "pages/welcome/welcome",
     "pages/popSci/popSci",
     "pages/patriotism/patriotism",
@@ -12,6 +13,7 @@
     "pages/answer/answer",
     "pages/question/question",
     "pages/rule/rule",
+    "pages/wrong_set/wrong_set",
 
     "pages/person/person",
     

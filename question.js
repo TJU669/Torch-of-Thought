@@ -585,9 +585,10 @@ var list=[
 		"answer":"1"
 	},
 ]
-
+var wrongid = [1, 65]
 
 //数据暴露
 module.exports = {
-    quesList: list
+		quesList: list,
+		wrongid: wrongid
 }

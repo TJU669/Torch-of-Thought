@@ -1,0 +1,27 @@
+.main{
+  margin-top: 40rpx
+}
+
+.container {
+  margin-left: 20rpx;
+  padding: 0rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  box-sizing: border-box;
+  /* background-color: rgb(241, 241, 241); */
+  position: relative;
+  margin-bottom: 40rpx;
+  border-bottom: 2rpx solid #dbd8d8;
+}
+
+.total {
+  text-align: left;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.d{
+  margin-bottom: 25rpx;
+}

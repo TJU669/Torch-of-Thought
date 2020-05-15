@@ -15,7 +15,7 @@
       <navigator class="navi" url="../rule/rule" hover-class="navigator-hover">答题说明</navigator>
     </view>
     <view class="button">
-      <navigator class="navi"  hover-class="navigator-hover">错题集</navigator>   
+      <navigator class="navi" url="../wrong_set/wrong_set" hover-class="navigator-hover">错题集</navigator>   
     </view>
     <view class="button">
       <navigator class="navi" hover-class="navigator-hover">收藏夹</navigator>
