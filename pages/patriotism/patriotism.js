@@ -95,8 +95,11 @@ Page({
     }
   },
 
-  // 从str中找出每一个subStr出现位置的下标，放在ps数组中
-
+  tohome:function(){
+    wx.switchTab({
+      url: '../popSci/popSci',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

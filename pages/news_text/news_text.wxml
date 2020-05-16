@@ -1,6 +1,7 @@
 <Tabs tabs="{{tabs}}" binditemChange="handleItemChange"></Tabs>
 <view class="head">
-  <text class="left_blank"></text>
+  <text decode='true' class="btn" style="width:200rpx" bindtap="tohome">&lt; 返回首页</text>
+  <text class="middle_blank"></text>
   <text decode='true' class="btn" style="width:200rpx" bindtap="news_text2video">视频特辑 &gt;</text>
 </view>
 

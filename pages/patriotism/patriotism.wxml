@@ -1,5 +1,9 @@
-<!-- 爱国主义列表页 -->
+<!-- 家国情怀列表页 -->
 <Tabs tabs="{{tabs}}" binditemChange="handleItemChange"></Tabs>
+<view class="head">
+  <text decode='true' class="btn" style="width:200rpx" bindtap="tohome">&lt; 返回首页</text>
+  <text class="right_blank"></text>
+</view>
 <view class="qqcontainer">
     <image class="bkg" mode='widthFix' src="https://tva1.sinaimg.cn/large/007S8ZIlly1gepx1ul3tzj30hs0vmabf.jpg"></image>
     <view class="video_wrap">

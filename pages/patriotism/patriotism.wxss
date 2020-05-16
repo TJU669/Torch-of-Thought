@@ -48,3 +48,24 @@
     width: 700rpx;
     border-radius:80rpx;
 }
+
+.head{
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  font-size: 16rpx;
+  padding:2%;
+}
+
+.right_blank {
+   flex: 1;
+   align-items:center;
+}
+ 
+/* 跳转到视频页的按钮 */
+.btn{
+  font-size: 35rpx;
+  margin-top: 85rpx;
+  position: relative;
+  align-items:center;
+}

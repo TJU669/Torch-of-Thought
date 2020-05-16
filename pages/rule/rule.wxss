@@ -16,7 +16,7 @@
     position:fixed;
     margin-left: 50rpx;
     margin-right: 50rpx;
-    margin-top: 17%;
+    margin-top: 15%;
     height: 100rpx;
     width: 650rpx;
     border-radius:30rpx; 
@@ -37,7 +37,7 @@
     margin-left: 50rpx;
     margin-right: 50rpx;
     /* margin-top: 250rpx; */
-    margin-top: 35%;
+    margin-top: 33%;
     height: 60%;
     width: 650rpx;
     
@@ -54,7 +54,7 @@
     margin-left: 20rpx;
     margin-right: 20rpx;
     white-space:pre-line;
-    font-size: large;
+    /* font-size: large; */
     font-weight: bold;
     color: #000080;
     line-height:30px;

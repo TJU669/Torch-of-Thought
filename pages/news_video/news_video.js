@@ -108,7 +108,12 @@ Page({
       })
     }
   },
-
+  tohome:function(){
+    wx.switchTab({
+      url: '../popSci/popSci',
+    })
+  },
+  
   news_video2text(){
     wx.navigateTo({
       url: '../news_text/news_text',
