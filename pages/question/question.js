@@ -41,12 +41,40 @@ Page({
 
   /**
    * 处理点击选项
+   * comment below added by: yupeng
+   * 1. 检查答题是否选对，错误自动添加到错题集
+   * 2. 添加收藏题目功能，此处可能需要在question.wxml中实现
+   * 3. 错题集和收藏功能都可以根据题目id和用户id，添加到一个js文件中（与题目库question.js类似）
    */
   handleClick:function(e){
     // 输出用户选择的选项（ABCD-1234）
     console.log(e.currentTarget.dataset.ans);
     // 输出这道题的id（题库里的编号）
     console.log(e.currentTarget.dataset.id);
+    // 测试答错时的反馈
+    console.log(e.currentTarget.dataset.answer);
+    if (e.currentTarget.dataset.ans == e.currentTarget.dataset.answer){
+      console.log("答对了~");
+      // 弹框显示答对了信息
+      wx.showModal({
+        title: '答对了~',
+        content: '恭喜你，答对了',
+        showCancel: false,
+        cancelText: '取消',
+        confirmText: "确定",//默认是“确定”
+      });
+    }
+    else{
+      console.log("答错了！");
+      // 弹框显示答错了信息
+      wx.showModal({
+        title: '答错了！',
+        content: '对不起，答错了',
+        showCancel: false,
+        cancelText: '取消',
+        confirmText: "确定",//默认是“确定”
+      });
+    }
   },
 
   /**
