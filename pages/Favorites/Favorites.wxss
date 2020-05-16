@@ -1,0 +1,38 @@
+/* pages/Favorites/Favorites.wxss */
+.main{
+  margin-top: 40rpx;
+  background-color: rgba(255, 234, 202, 0.3);
+}
+
+.container {
+  margin-left: 20rpx;
+  padding: 0rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  box-sizing: border-box;
+  /* background-color: rgb(241, 241, 241); */
+  position: relative;
+  margin-bottom: 40rpx;
+  border-bottom: 2rpx solid #dbd8d8;
+}
+
+.total {
+  text-align: center;
+  padding: 25rpx;
+  background-color: rgba(255, 234, 202, 0.35);
+  border-bottom:solid 1px beige;
+}
+.btn1 {
+  width: 80%;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  background-color: transparent;
+  border: solid 1rpx orange;
+  border-radius: 10rpx;
+  color: rgb(249, 197, 154);
+}
+.d{
+  margin-bottom: 25rpx;
+}
