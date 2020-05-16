@@ -5,6 +5,10 @@ page {
   background-color: #F5F5F5;
 } 
 
+.option{
+  margin-bottom: 10rpx;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;

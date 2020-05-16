@@ -10,17 +10,17 @@ Page({
     tabs: [
       {
         id: 0,
-        name: "科普",
+        name: "防控科普",
         isActive: false
       },
       {
         id: 1,
-        name: "要闻",
+        name: "时政要闻",
         isActive: true
       },
       {
         id: 2,
-        name: "（爱国）",
+        name: "家国情怀",
         isActive: false
       }
     ],
