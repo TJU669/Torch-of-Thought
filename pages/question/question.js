@@ -106,9 +106,9 @@ Page({
     }
 
 
-    console.log(getApp().globalData.totalid)
-    console.log(getApp().globalData.wrongid)
-    console.log(getApp().globalData.score)
+    // console.log(getApp().globalData.totalid)
+    // console.log(getApp().globalData.wrongid)
+    // console.log(getApp().globalData.score)
 
   },
 

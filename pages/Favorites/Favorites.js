@@ -1,6 +1,5 @@
 // pages/Favorites/Favorites.js
-
-var app = getApp()
+var app = getApp();
 
 Page({
 
@@ -10,9 +9,9 @@ Page({
   data: {
     questionNum: [],
     questionList: [], 
-    wrongid: [],
-    amount: 0,
-    btnName: ''
+    favorid: [],
+    btnName: '',
+    amount: 0
   },
 
   /**
@@ -21,16 +20,16 @@ Page({
   getQuesList(){
     var quesData = require('../../question.js');
     var quesList = quesData.quesList;
-    var wrongid = app.globalData.wrongid;
+    var favorid = app.globalData.favorid;
     var amount = 0;
     var btnName = '取消收藏';
-    
+    console.log(favorid)
     var arr = [];
     //去重复
-    for (var i = 0; i < wrongid.length; i++) {
-      // console.log("错题本")
-      // console.log(wrongid[i]);
-      var num = wrongid[i];
+    for (var i = 0; i < favorid.length; i++) {
+      // console.log("收藏夹")
+      // console.log(favorid[i]);
+      var num = favorid[i];
       if (arr.indexOf(num) == -1){
         arr.push(num);
       }
@@ -43,7 +42,7 @@ Page({
     // console.log(amount);
 
     var question = [];
-    for (var j = 0; j < wrongid.length; j++){
+    for (var j = 0; j < favorid.length; j++){
       question.push(quesList[arr[j]-1]);
     }
 
@@ -54,36 +53,32 @@ Page({
     })
   },
 // 处理取消收藏
-Uncollect: function (e) {
-  console.log(e.currentTarget.dataset.id);
-  var btnName = '收藏';
-  this.setData({
-    btnName: btnName,
-  })
-},
-onCollectionTap: function(event) {
+onCollectionTap: function(e) {
   // 获取当前点击下标
-  var index = event.currentTarget.dataset.id;
+  var index = e.currentTarget.dataset.id;
   console.log(index);
-  // data中获取列表
-  var message = this.data.questionList;
-  for (let i in message) { //遍历列表数据
-    if (i == index) { //根据下标找到目标
-      var collectStatus = false
-      if (message[i].collected == 0) { //如果是没点赞+1
-        collectStatus = true;
-      } else {
-        collectStatus = false;
-      }
-      var btnName = collectStatus ? '取消收藏' : '收藏';
-      console.log(btnName);
-      wx.showToast({
-        title: collectStatus ? '收藏' : '取消收藏',
-      })
-    }
+  var favorid = app.globalData.favorid;
+  if(favorid.indexOf(e.currentTarget.dataset.id)!=-1){  //收藏夹里有当前题号
+    let deleteindex = favorid.indexOf(e.currentTarget.dataset.id)
+    favorid.splice(deleteindex, 1); //从收藏夹移除
+    getApp().globalData.favorid = favorid;  //赋值到全局变量
   }
+  
+  // console.log(getApp().globalData.favorid)
+  wx.redirectTo({
+    url: 'Favorites',
+    success: function () {
+      wx.showToast({
+        title: '取消收藏',
+        duration: 2000
+      })
+    },
+    fail: function () {},
+    complete: function () {},
+  })
+
   this.setData({
-    btnName: btnName
+    // btnName: '已取消收藏'
   })
 },
   

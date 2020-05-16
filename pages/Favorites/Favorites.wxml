@@ -17,7 +17,7 @@
     
    </view>
    <view class="favorbtn">
-      <button class="btn1" bindtap="onCollectionTap" data-id="{{item.id}}">{{btnName}}</button>
+      <button class="btn1" bindtap="onCollectionTap" data-id="{{item.id}}" >{{btnName}}</button>
     </view>
   </view>
 </view>

@@ -22,16 +22,29 @@
   /* display: block; */
   /* background-color: white; */
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1),rgba(255, 255, 255, 1));
-  margin: 2%;
+  margin: 1%;
   height: auto;
   /* border-radius: 8px; */
   box-shadow:3px 6px 6px rgba(0, 0, 0, 0.3);
+  
 }
 .title {
+  margin-left: 10rpx;
+  margin-right:10rpx;
   padding:2%;
-  font-size: 16px;
+  font-size: 18px;
   font-family:"Microsoft Yahei";
   /* color: white; */
   background-color: rgba(255, 255, 255, 0.9);
   padding-bottom: 8px;
+}
+
+.video_wrap{
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    /* margin-top: 250rpx; */
+    margin-top: 20rpx;
+    height: 60%;
+    width: 700rpx;
+    border-radius:80rpx;
 }
