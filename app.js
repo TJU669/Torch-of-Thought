@@ -37,6 +37,7 @@ App({
     userInfo: null,
     wrongid:[],
     totalid:[],
+    favorid:[],
     score: 0,
   }
 })

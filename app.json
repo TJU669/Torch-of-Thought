@@ -32,13 +32,13 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小程序",
+    "navigationBarTitleText": "科普问答小程序",
     "navigationBarTextStyle": "black"
   },
   "tabBar":{
     "list":[{
       "pagePath":"pages/popSci/popSci",
-      "text": "未定义",
+      "text": "学习",
       "iconPath": "icons/icon0_0.png",
       "selectedIconPath":"icons/icon0_1.png"
     },

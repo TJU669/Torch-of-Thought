@@ -56,6 +56,6 @@
     white-space:pre-line;
     font-size: large;
     font-weight: bold;
-    color: #FF1493;
+    color: #000080;
     line-height:30px;
 }

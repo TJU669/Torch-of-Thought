@@ -112,6 +112,29 @@ Page({
 
   },
 
+  //add to my collection
+  addtofavor:function(e){
+    let that = this;
+    var currentAnswers;
+    console.log(e.currentTarget.dataset);
+    // 输出这道题的id（题库里的编号）
+    console.log(e.currentTarget.dataset.id);
+
+    var favorid = app.globalData.favorid;
+    if(favorid.indexOf(e.currentTarget.dataset.id)==-1){  //收藏集里没有当前题号
+      favorid.push(e.currentTarget.dataset.id); //加入到收藏集
+      getApp().globalData.favorid = favorid;  //赋值到全局变量
+    }
+    console.log(getApp().globalData.favorid)
+    wx.showModal({
+      title: '已收藏~',
+      content: '已将该题目添加到收藏夹',
+      showCancel: false,
+      cancelText: '取消',
+      confirmText: "确定",//默认是“确定”
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

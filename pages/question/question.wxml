@@ -11,6 +11,7 @@
     <view class="btn_cell" bindtap="handleClick" data-quesnum="{{questionNum[index]}}" data-ans="3" data-answer="{{item.answer}}" hover-class="{{item.answer == 3 ? 'button-hover-yes' : 'button-hover'}}" hover-stay-time='2000' data-id="{{item.id}}">C. {{item.C}}</view>
     <view class="btn_cell" bindtap="handleClick" data-quesnum="{{questionNum[index]}}" data-ans="4" data-answer="{{item.answer}}" hover-class="{{item.answer == 4 ? 'button-hover-yes' : 'button-hover'}}" hover-stay-time='2000' data-id="{{item.id}}">D. {{item.D}}</view>
    </view>
+   <view class="addbtn" bindtap="addtofavor" hover-class="button-hover-yes" hover-stay-time='1000' data-id="{{item.id}}" >收藏</view>
   </view>
   <!-- <view class="button"> -->
       <!-- open-type="switchTab"表示调整到tabBar界面，不指定该属性将无法调整到tabBar -->
@@ -18,3 +19,4 @@
       <navigator class="btn2" url="../answer/answer" open-type="switchTab" hover-class="navigator-hover">完成答题</navigator>
   <!-- </view> -->
 </view>
+

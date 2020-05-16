@@ -31,7 +31,16 @@ page {
 .button-hover-yes {
   background-color: rgb(97, 197, 97);
 }
-
+.addbtn {
+  width: 20%;
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  background-color: transparent;
+  border: solid 1rpx orange;
+  border-radius: 10rpx;
+  color: rgb(249, 197, 154);
+}
 .navi {
   color: green;
   padding: 40rpx;
@@ -87,5 +96,5 @@ page {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100rpx;
+  margin-bottom: 60rpx;
 }
