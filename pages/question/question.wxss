@@ -19,3 +19,33 @@
 .d{
   margin-bottom: 25rpx;
 }
+
+.button-hover {
+  background-color: rgb(255, 0, 98);
+}
+
+.button-hover-yes {
+  background-color: rgb(97, 197, 97);
+}
+
+.navi {
+  color: green;
+  padding: 40rpx;
+  font-size:35rpx;
+  font-weight: bold;
+}
+
+.navigator-hover {
+  color: blue;
+}
+
+.button {
+  background-color: #FFF8DC;
+  margin: auto;
+  margin-bottom: 60rpx;
+  text-align: center;
+  line-height: 30rpx;
+  height: 100rpx;
+  width: 250rpx;
+  opacity: 0.6;
+}
