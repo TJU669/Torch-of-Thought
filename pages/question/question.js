@@ -1,5 +1,5 @@
 var app = getApp();
-// var wrongid = [];
+var flag = true;
 Page({
   /**
    * 页面的初始数据
@@ -50,23 +50,31 @@ Page({
    * 3. 错题集和收藏功能都可以根据题目id和用户id，添加到一个js文件中（与题目库question.js类似）
    */
   handleClick:function(e){
-    let that = this;
-    var currentAnswers;
     console.log(e.currentTarget.dataset);
     // 输出用户选择的选项（ABCD-1234）
-    console.log(e.currentTarget.dataset.ans);
+    // console.log(e.currentTarget.dataset.ans);
     // 输出这道题的id（题库里的编号）
     console.log(e.currentTarget.dataset.id);
     // 测试答错时的反馈
-    console.log(e.currentTarget.dataset.answer);  //正确选项
+    // console.log(e.currentTarget.dataset.answer);  //正确选项
 
+    var score = app.globalData.score;
+    var totalid = app.globalData.totalid;
+
+    //如果是个新题目，添加到已做过的题目
+    if(totalid.indexOf(e.currentTarget.dataset.id)==-1){
+      totalid.push(e.currentTarget.dataset.id); //加入到全局
+      getApp().globalData.totalid = totalid;  //赋值到全局变量
+    }
+
+    //判断对错及添加到错题集
     if(e.currentTarget.dataset.ans != e.currentTarget.dataset.answer){
       var wrongid = app.globalData.wrongid;
       if(wrongid.indexOf(e.currentTarget.dataset.id)==-1){  //错题集里没有当前题号
         wrongid.push(e.currentTarget.dataset.id); //加入到错题集
         getApp().globalData.wrongid = wrongid;  //赋值到全局变量
+        flag = false;
       }
-      console.log(getApp().globalData.wrongid)
     }
     if (e.currentTarget.dataset.ans == e.currentTarget.dataset.answer){
       console.log("答对了~");
@@ -78,6 +86,12 @@ Page({
         cancelText: '取消',
         confirmText: "确定",//默认是“确定”
       });
+
+      score +=1;
+      if(e.currentTarget.dataset.quesnum==8 && flag==true){
+        score+=5;
+      }
+      getApp().globalData.score = score;
     }
     else{
       console.log("答错了！");
@@ -90,6 +104,12 @@ Page({
         confirmText: "确定",//默认是“确定”
       });
     }
+
+
+    console.log(getApp().globalData.totalid)
+    console.log(getApp().globalData.wrongid)
+    console.log(getApp().globalData.score)
+
   },
 
   /**
@@ -97,6 +117,9 @@ Page({
    */
   onLoad: function (options) {
     this.getQuesList();
+    // for(var i=1; i<=8; i++){
+    //   console.log(this.data.questionList[i])
+    // }
   },
 
   /**

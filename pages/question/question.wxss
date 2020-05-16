@@ -87,5 +87,5 @@ page {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 60rpx;
+  margin-bottom: 100rpx;
 }

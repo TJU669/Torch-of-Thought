@@ -27,7 +27,7 @@
 			</view>
 
 
-			<view class="weui-cell weui-cell_active weui-cell_access">
+			<view class="weui-cell weui-cell_active weui-cell_access" bindtap='showdata'>
 				<view class="weui-cell__bd">
 					<text style="vertical-align: middle;">答题数据</text>
 					<!-- <text class="weui-badge" style="margin-left: 5px;">8</text> -->

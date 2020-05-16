@@ -586,8 +586,6 @@ var list=[
 	},
 ]
 
-var wrongid = []
-
 //数据暴露
 module.exports = {
 		quesList: list,

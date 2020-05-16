@@ -35,6 +35,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    wrongid:[]
+    wrongid:[],
+    totalid:[],
+    score: 0,
   }
 })

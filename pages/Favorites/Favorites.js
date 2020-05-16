@@ -1,4 +1,7 @@
 // pages/Favorites/Favorites.js
+
+var app = getApp()
+
 Page({
 
   /**
@@ -18,7 +21,7 @@ Page({
   getQuesList(){
     var quesData = require('../../question.js');
     var quesList = quesData.quesList;
-    var wrongid = quesData.wrongid;
+    var wrongid = app.globalData.wrongid;
     var amount = 0;
     var btnName = '取消收藏';
     

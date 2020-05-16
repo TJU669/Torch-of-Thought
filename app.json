@@ -1,8 +1,8 @@
 {
   "pages": [
 
-    
     "pages/welcome/welcome",
+
     "pages/popSci/popSci",
     "pages/patriotism/patriotism",
     "pages/wynews/wynews",
@@ -10,7 +10,8 @@
     "pages/news_text/news_text",
     "pages/news_text_detail/news_text_detail",
     "pages/news_video/news_video",
-
+    "pages/videoPlay/videoPlay",
+    
     
     "pages/answer/answer",
     "pages/question/question",
@@ -20,8 +21,9 @@
     
 
     "pages/person/person",
+    "pages/persondata/persondata",
+
     
-    "pages/videoPlay/videoPlay",
     
     "pages/index/index",
     "pages/logs/logs"

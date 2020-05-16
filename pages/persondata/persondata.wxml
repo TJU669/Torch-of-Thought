@@ -1,0 +1,18 @@
+<!--pages/persondata/persondata.wxml-->
+
+<image class='bkg' mode='widthFix' src="https://tva1.sinaimg.cn/large/007S8ZIlly1gepx1ul3tzj30hs0vmabf.jpg" mode="aspectFill"></image>
+<view class='title'>您的答题数据如下：</view>
+<view class='frame'>
+    <view class='ordinary'>
+        <view class='text'>已回答问题数：{{total_num}}</view>
+        </view>
+    <view class='ordinary'>
+        <view class='text'>回答正确数量：{{correct_num}}</view>
+        </view>
+    <view class='ordinary'>
+        <view class='text'>得分：{{score}}</view>
+        </view>
+    <view class='ordinary'>
+        <view class='text'>正确率：{{rate}}</view>
+    </view>
+</view>
