@@ -1,0 +1,23 @@
+<!--pages/Favorites/Favorites.wxml-->
+<wxs module="filter" src="../wrong_set/wrong_set.wxs"></wxs>
+<view class="main">
+<!-- 从../../question.js中获取错题列表 -->
+<view class="total">共{{amount}}个收藏题目~</view>
+
+  <view class="container"  wx:for="{{questionList}}" wx:key="index">
+   <view class="question" style="font-weight: bord">
+    {{item.question}}
+   </view>
+   <view class="option">
+    <view class="a" bindtap="handleClick" data-ans="1" data-id="{{item.id}}">A. {{item.A}}</view>
+    <view class="b" bindtap="handleClick" data-ans="2" data-id="{{item.id}}">B. {{item.B}}</view>
+    <view class="c" bindtap="handleClick" data-ans="3" data-id="{{item.id}}">C. {{item.C}}</view>
+    <view class="d" bindtap="handleClick" data-ans="4" data-id="{{item.id}}">D. {{item.D}}</view>
+    正确答案：{{filter.numberToalp( item.answer )}}
+    
+   </view>
+   <view class="favorbtn">
+      <button class="btn1" bindtap="onCollectionTap" data-id="{{item.id}}">{{btnName}}</button>
+    </view>
+  </view>
+</view>
