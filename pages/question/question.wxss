@@ -25,11 +25,13 @@ page {
 }
 
 .button-hover {
-  background-color: rgb(255, 0, 98);
+  /* background-color: rgb(255, 0, 98); */
+  background-color: #FF8C00;
 }
 
 .button-hover-yes {
-  background-color: rgb(97, 197, 97);
+  /* background-color: rgb(97, 197, 97); */
+  background-color: #FF8C00;
 }
 .addbtn {
   width: 20%;

@@ -17,26 +17,34 @@ Page({
   getQuesList(){
     var quesData = require('../../question.js');
     var quesList = quesData.quesList;
+    var totalid = app.globalData.totalid;
     
     var min = 1;
     var max = 65;
     var arr = [];
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < (8<max?8:max); i++) {
       var num = Math.floor(Math.random() * (max - min + 1)) + min;
       num = parseInt(num, 10);
-      if (arr.indexOf(num) == -1){
-        arr.push(num);
-      }
-      else{
-        i -= 1;
+      if (arr.indexOf(num) == -1 && totalid.indexOf(num)==-1){
+          arr.push(num);
       }
     }
-    
-    var question = [];
-    for (var j = 0; j < 8; j++){
-      question.push(quesList[arr[j]-1]);
+    console.log(arr.length)
+    if(arr.length==0){
+      wx.showModal({
+        title: '您已答完所有的题！',
+        content: '如果需要清除记录请重新进入小程序',
+        showCancel: false,
+        cancelText: '取消',
+        confirmText: "了解",//默认是“确定”
+      });  
     }
-
+    else{
+      var question = [];
+      for (var j = 0; j < arr.length; j++){
+        question.push(quesList[arr[j]-1]);
+      }
+    }
     this.setData({
       questionList: question
     })
@@ -65,19 +73,27 @@ Page({
     if(totalid.indexOf(e.currentTarget.dataset.id)==-1){
       totalid.push(e.currentTarget.dataset.id); //加入到全局
       getApp().globalData.totalid = totalid;  //赋值到全局变量
-    }
 
-    //判断对错及添加到错题集
-    if(e.currentTarget.dataset.ans != e.currentTarget.dataset.answer){
-      var wrongid = app.globalData.wrongid;
-      if(wrongid.indexOf(e.currentTarget.dataset.id)==-1){  //错题集里没有当前题号
-        wrongid.push(e.currentTarget.dataset.id); //加入到错题集
-        getApp().globalData.wrongid = wrongid;  //赋值到全局变量
-        flag = false;
+      //错误的情况并添加到错题集
+      if(e.currentTarget.dataset.ans != e.currentTarget.dataset.answer){
+        var wrongid = app.globalData.wrongid;
+        if(wrongid.indexOf(e.currentTarget.dataset.id)==-1){  //错题集里没有当前题号
+          wrongid.push(e.currentTarget.dataset.id); //加入到错题集
+          getApp().globalData.wrongid = wrongid;  //赋值到全局变量
+          flag = false;
+        }
+      }
+      //答对的情况
+      else{
+        score +=1;
+        if(e.currentTarget.dataset.quesnum==8 && flag==true){
+          score+=5;
+        }
+        getApp().globalData.score = score;
       }
     }
 
-    //答对的情况
+    //答题反馈
     if (e.currentTarget.dataset.ans == e.currentTarget.dataset.answer){
       console.log("答对了~");
       // 弹框显示答对了信息
@@ -87,18 +103,8 @@ Page({
         showCancel: false,
         cancelText: '取消',
         confirmText: "确定",//默认是“确定”
-      });
-
-      //防止恶意刷分
-      if(totalid.indexOf(e.currentTarget.dataset.id)==-1){
-        score +=1;
-        if(e.currentTarget.dataset.quesnum==8 && flag==true){
-          score+=5;
-        }
-      }
-      getApp().globalData.score = score;
+      });  
     }
-    
     else{
       console.log("答错了！");
       // 弹框显示答错了信息
@@ -110,12 +116,6 @@ Page({
         confirmText: "确定",//默认是“确定”
       });
     }
-
-
-    // console.log(getApp().globalData.totalid)
-    // console.log(getApp().globalData.wrongid)
-    // console.log(getApp().globalData.score)
-
   },
 
   //add to my collection
@@ -146,9 +146,7 @@ Page({
    */
   onLoad: function (options) {
     this.getQuesList();
-    // for(var i=1; i<=8; i++){
-    //   console.log(this.data.questionList[i])
-    // }
+    
   },
 
   /**
