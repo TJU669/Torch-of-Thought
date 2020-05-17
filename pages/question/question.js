@@ -22,11 +22,23 @@ Page({
     var min = 1;
     var max = 65;
     var arr = [];
-    for (var i = 0; i < (8<max?8:max); i++) {
+    var capacity = 8 < max ? 8 : max;
+    var threshold =0;  //重新出题的阈值
+
+    for (var i = 0; i < capacity; i++) {
+      if(arr.length==capacity || totalid.length==max){//如果达到容量 或者 题库里没题了，break
+        break;
+      }
+      //从题库中抽题
       var num = Math.floor(Math.random() * (max - min + 1)) + min;
       num = parseInt(num, 10);
       if (arr.indexOf(num) == -1 && totalid.indexOf(num)==-1){
           arr.push(num);
+      }
+      //如果没达到容量，从头开始抽
+      if(i==capacity-1 && arr.length<capacity && threshold<5){
+        i =0;
+        threshold++;
       }
     }
     console.log(arr.length)
