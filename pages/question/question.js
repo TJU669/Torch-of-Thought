@@ -76,6 +76,8 @@ Page({
         flag = false;
       }
     }
+
+    //答对的情况
     if (e.currentTarget.dataset.ans == e.currentTarget.dataset.answer){
       console.log("答对了~");
       // 弹框显示答对了信息
@@ -87,12 +89,16 @@ Page({
         confirmText: "确定",//默认是“确定”
       });
 
-      score +=1;
-      if(e.currentTarget.dataset.quesnum==8 && flag==true){
-        score+=5;
+      //防止恶意刷分
+      if(totalid.indexOf(e.currentTarget.dataset.id)==-1){
+        score +=1;
+        if(e.currentTarget.dataset.quesnum==8 && flag==true){
+          score+=5;
+        }
       }
       getApp().globalData.score = score;
     }
+    
     else{
       console.log("答错了！");
       // 弹框显示答错了信息

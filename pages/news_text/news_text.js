@@ -70,7 +70,12 @@ Page({
     }
   },
 
-
+  tohome: function () {
+    wx.switchTab({
+      url: '../popSci/popSci',
+    })
+  },
+  
   news_text2video(){
     wx.navigateTo({
       url: '../news_video/news_video',
