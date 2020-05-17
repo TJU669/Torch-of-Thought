@@ -19,11 +19,11 @@
     font-stretch:expanded;
 
     text-align: center;
-    color:#8470FF;
+    color:#CD5C5C;
 }
 
 .frame{
-    margin-top: 25%;
+    margin-top: 20%;
 }
 
 
@@ -34,6 +34,18 @@
     text-align: center;
     line-height: 30rpx;
     height: 100rpx;
+    width: 500rpx;
+    opacity: 0.6;
+}
+
+.ordinary2{
+    white-space:pre-line;
+    background-color: #FFD700;
+    margin: auto;
+    margin-bottom: 60rpx;
+    text-align: center;
+    line-height: 30rpx;
+    height: 160rpx;
     width: 500rpx;
     opacity: 0.6;
     

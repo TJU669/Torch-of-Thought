@@ -23,9 +23,7 @@ Page({
     correct_num = total_num - wrong_num;
     rate = correct_num/total_num;
     score = app.globalData.score;
-
-
-
+    rate = '\n\n'+String(rate);
     this.setData({
     total_num: total_num,
     wrong_num: wrong_num,
