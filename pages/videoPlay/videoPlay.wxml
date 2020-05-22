@@ -1,7 +1,9 @@
 <!-- video详情页（播放页） -->
 <view class="pageView">
-	<video id="myVideo" style="width:100%" objectFit="cover" mode='aspectFit' autoplay="true" bindended="playEnd" src="{{videUrl}}">
+	<!-- 添加视频播放背景图片。。。没效果 -->
+	<image class="bkg" mode='widthFix' src="https://tva1.sinaimg.cn/large/007S8ZIlly1gepx1ul3tzj30hs0vmabf.jpg"></image>
+	<video id="myVideo" style="width:98%" objectFit="cover" mode='aspectFit' autoplay="true" bindended="playEnd" src="{{videUrl}}">
 	</video>
-	<view class="article__h1" style="color: #ffffff">{{videTitle}}</view>
+	<view class="video_title" style="color: #000000">{{videTitle}}</view>
 
 </view>

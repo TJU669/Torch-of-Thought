@@ -2,21 +2,33 @@
 
 .pageView{
   display: flex;
-  background-color: #000000;
+  /* background-color: #000000; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
 }
+
+.bkg {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  opacity: 0.6;
+  background-size:100% 100%;
+}
+
 video{
 	width: 100%;
   height: 422rpx;
-  /* margin-top: 200rpx; */
+  border-radius: 30rpx;
 }
 
-.article__h1{
-  font-size:22px;
+.video_title{
+  font-size:20px;
   font-weight:700;
   margin-bottom:.9em;
   line-height:1.4;
