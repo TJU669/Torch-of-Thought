@@ -1,2 +1,17 @@
-<!--pages/historymv/historymv.wxml-->
-<text>pages/historymv/historymv.wxml</text>
+  <view class="main">
+    <!-- 视频列表 -->
+    <view class="video_wrap">
+      <navigator url="../videoPlay/videoPlay?vid={{item.vid}}&pic={{item.pic}}&title={{item.title}}" class="video_item" wx:for="{{currentList}}" wx:key="index">
+        <view class="content">
+          <!-- 图片容器 -->
+          <view class="video_img_wrap">
+            <image src="{{item.pic}}" mode="widthFix"></image>
+          </view>
+          <!-- 视频标题 -->
+          <view class="video_title">
+            {{item.title}}
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>

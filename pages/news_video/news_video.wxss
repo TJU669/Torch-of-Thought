@@ -10,6 +10,7 @@ page{
   display: flex;
   flex-direction: row;
   margin-bottom: 10rpx;
+  opacity: 0.9;
 }
 
 .right_blank {
@@ -30,15 +31,17 @@ page{
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between;
+  background-color: #F5F5F5;
 }
 
 .video_item{
-  background-color: #fff;
+  /* background-color: #fff; */
   /* border: 4rpx outset rgb(218, 213, 216); */
   border-top: 4rpx solid #dddada;
   border-bottom: 6rpx solid #cfcdcd;
   border-radius: 3%;
   margin-bottom: 10rpx;
+  background-color: #F5F5F5;
 }
 
 .content{
@@ -46,8 +49,13 @@ page{
   display: flex;
   justify-content: space-between;
   margin-bottom:20rpx;
-  margin-top: 20rpx
+  margin-top: 20rpx;
+  /* background-color: #F5F5F5; */
 }
+
+/* .video_wrap{
+  background-color: #F5F5F5;
+} */
 
 .video_img_wrap{
   width: 35%;

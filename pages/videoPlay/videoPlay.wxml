@@ -4,9 +4,10 @@
 	<image class='bkg' mode='widthFix' src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf1pg4s20wj30ez0t6q4o.jpg"></image>
 	
   	<view class='newsitem'>
-    	<view class="video_title" style="color: #000000">{{videTitle}}</view>
+    	
 		<video id="myVideo" style="width:100%" objectFit="cover" mode='aspectFit' autoplay="true" bindended="playEnd" src="{{videUrl}}">
 		</video>
+		<view class="video_title" style="color: #000000">{{videTitle}}</view>
     </view>
 
 

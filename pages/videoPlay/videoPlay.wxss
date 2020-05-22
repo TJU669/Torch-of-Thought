@@ -14,20 +14,21 @@ image{height:40px}
 }
 
 video{
-	width: 95%;
+  /* margin:5%; */
+	width: 90%;
   height: 422rpx;
   border-radius: 50rpx;
 }
 
 .newsitem{
   margin: 3%;
-  margin-top:200rpx;
+  margin-top:40%;
   width: 94%;
   height: 550rpx;
   display: flex;
   flex-direction: column;
   border-radius: 50rpx;
-  border: 2rpx solid rgb(230, 185, 40)
+  border: 2rpx solid #FF4500
  }
 .video_title{
   color: black;
@@ -46,13 +47,15 @@ video{
 .icon-view1 {
   padding: 20rpx 0;
   position: fixed;
-  bottom: 40rpx;
-  left:40rpx;
+  /* bottom: 40rpx; */
+  margin-top: 10%;
+  left:60rpx;
 }
 
 .icon-view2 {
   padding: 20rpx 0;
   position: fixed;
-  bottom: 40rpx;
-  right:40rpx;
+  /* bottom: 40rpx; */
+  margin-top: 10%;
+  right:60rpx;
 }

@@ -60,6 +60,7 @@
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
   font-size: 16rpx;
   padding:2%;
+  opacity: 0.9;
 }
 
 .right_blank {
