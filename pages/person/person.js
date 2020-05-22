@@ -16,6 +16,18 @@ Page({
       url: '../persondata/persondata'
     })
   },
+
+  showfavor:function(){
+    wx.navigateTo({
+      url: '../favormv/favormv'
+    })
+  },
+
+  showhistory:function(){
+    wx.navigateTo({
+      url: '../historymv/historymv'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -35,15 +35,21 @@
 				<view class="weui-cell__ft">详细信息</view>
 			</view>
 
-      <!-- <view class="weui-cells">
-        <view class="weui-cell weui-cell_active weui-cell_access">
-          <view class="weui-cell__bd">单行列表</view>
-          <view class="weui-cell__ft" style="font-size: 0;">
-            <text style="vertical-align: middle; font-size: 17px;">详细信息</text>
-            <text class="weui-badge weui-badge_dot" style="margin-left: 5px; margin-right: 5px;"></text>
-          </view>
-        </view>
-		  </view> -->
+			<view class="weui-cell weui-cell_active weui-cell_access" bindtap='showhistory'>
+				<view class="weui-cell__bd">
+					<text style="vertical-align: middle;">浏览记录</text>
+					<!-- <text class="weui-badge" style="margin-left: 5px;">8</text> -->
+				</view>
+				<!-- <view class="weui-cell__ft">详细信息</view> -->
+			</view>
+
+			<view class="weui-cell weui-cell_active weui-cell_access" bindtap='showfavor'>
+				<view class="weui-cell__bd">
+					<text style="vertical-align: middle;">我的收藏</text>
+					<!-- <text class="weui-badge" style="margin-left: 5px;">8</text> -->
+				</view>
+				<!-- <view class="weui-cell__ft">详细信息</view> -->
+			</view>
 
 		</view>
 	</view>

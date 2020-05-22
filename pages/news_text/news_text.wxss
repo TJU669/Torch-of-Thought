@@ -6,12 +6,15 @@ page{
 .head{
   display: flex;
   flex-direction: row;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx
 }
 
 .middle_blank {
    flex: 1;
    align-items:center;
 }
+
  
 /* 跳转到视频页的按钮 */
 .btn{
@@ -25,9 +28,20 @@ page{
 .main{
   display: flex;
   flex-wrap: wrap; 
-  margin-top: 30rpx;
   justify-content: space-between;
+  position: relative;
 }
+
+/* .bkg {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  opacity: 0.6;
+  background-size:100% 100%;
+} */
 
 .news_item{
   width: 100%;

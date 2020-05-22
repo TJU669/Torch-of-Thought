@@ -1,9 +1,21 @@
 <!-- video详情页（播放页） -->
-<view class="pageView">
-	<!-- 添加视频播放背景图片-->
-	<image class="bkg" mode='widthFix' src="https://tva1.sinaimg.cn/large/007S8ZIlly1gepx1ul3tzj30hs0vmabf.jpg"></image>
-	<video id="myVideo" style="width:98%" objectFit="cover" mode='aspectFit' autoplay="true" bindended="playEnd" src="{{videUrl}}">
-	</video>
-	<view class="video_title" style="color: #000000">{{videTitle}}</view>
 
-</view>
+<!-- <view class="pageView" mode='widthFix'> -->
+	<image class='bkg' mode='widthFix' src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf1pg4s20wj30ez0t6q4o.jpg"></image>
+	
+  	<view class='newsitem'>
+    	<view class="video_title" style="color: #000000">{{videTitle}}</view>
+		<video id="myVideo" style="width:100%" objectFit="cover" mode='aspectFit' autoplay="true" bindended="playEnd" src="{{videUrl}}">
+		</video>
+    </view>
+
+
+	<!-- 点赞 -->
+	<view class='icon-view1' bindtap="addtolike" data-id="{{videUrl}}">
+		<image class="like" style="width: 40px; display: block;" src="{{alreadyLiked == 1 ? '../../image/like1.png' : '../../image/like0.png'}}"></image>
+	</view>
+	<!-- 收藏 -->
+	<view class='icon-view2' bindtap="addtofavor" data-id="{{videUrl}}">	
+		<image class="favor" style="width: 40px; display: block;" src="{{alreadyFavored == 1 ? '../../image/favor1.png' : '../../image/favor0.png'}}"></image>
+	</view>
+<!-- </view> -->

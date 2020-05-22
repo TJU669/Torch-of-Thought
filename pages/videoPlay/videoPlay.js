@@ -1,4 +1,5 @@
-
+var app = getApp();
+var videoObj;
 var part_urls = {};
 var videoPage;
 var pageArr = new Array()
@@ -6,8 +7,90 @@ import qqVideo from "../../utils/qqVideo.js"
 import videoTitle from "../../utils/videoTitle.js"
 
 Page({
-  onLoad: function (options) {
 
+  data:{
+    alreadyFavored: false,
+    alreadyLiked: false,
+  },
+
+  //点赞
+  addtolike:function(e){
+    let that = this;
+    
+    var likemvid = app.globalData.likemvid;
+
+    //点赞
+    var lIndex = likemvid.indexOf(videoObj.vid);
+    if(lIndex==-1){  //当前vid
+      likemvid.push(videoObj.vid); //加入到点赞列表
+      app.globalData.likemvid = likemvid;  //赋值到全局变量
+
+      that.setData({
+        alreadyLiked:true
+      })
+    }
+
+    //取消点赞
+    else{
+      likemvid.splice(lIndex,1); //从点赞列表里删除
+      app.globalData.likemvid = likemvid;  //赋值到全局变量
+      that.setData({
+        alreadyLiked:false
+      })
+    }
+    
+  },
+
+  //add to my collection
+  addtofavor:function(e){
+    let that = this;
+    
+    var favormvid = app.globalData.favormvid;
+
+    //收藏
+    var fIndex = favormvid.indexOf(videoObj.vid);
+    if(fIndex==-1){  //收藏集里没有当前vid
+      favormvid.push(videoObj.vid); //加入到收藏集
+      app.globalData.favormvid = favormvid;  //赋值到全局变量
+
+      app.globalData.favormv.push(videoObj);
+      wx.showModal({
+        title: '已收藏~',
+        content: '已将视频到收藏夹',
+        showCancel: false,
+        cancelText: '取消',
+        confirmText: "确定",//默认是“确定”
+      });
+
+      that.setData({
+        alreadyFavored:true
+      })
+    }
+
+    //取消收藏
+    else{
+      favormvid.splice(fIndex,1); //从收藏集里删除
+      app.globalData.favormvid = favormvid;  //赋值到全局变量
+
+      app.globalData.favormv.splice(fIndex,1);
+
+
+      wx.showModal({
+        title: '已取消收藏',
+        content: '已将视频从收藏夹移除',
+        showCancel: false,
+        cancelText: '取消',
+        confirmText: "确定",//默认是“确定”
+      });
+
+      that.setData({
+        alreadyFavored:false
+      })
+    }
+    
+  },
+  onLoad: function (options) {
+    
     if (options.vid != undefined) {
       this.setData({
         file_id: options.vid
@@ -18,6 +101,33 @@ Page({
       })
     }
 
+    //判断是否点赞
+    var likemvid = app.globalData.likemvid;
+    if(likemvid.indexOf(options.vid)==-1){  //没有当前vid
+      this.setData({
+        alreadyLiked:false,
+      })
+    }
+    else{
+      this.setData({
+        alreadyLiked:true,
+      })
+    }
+
+    //判断是否收藏
+    var favormvid = app.globalData.favormvid;
+    if(favormvid.indexOf(options.vid)==-1){  //收藏集里没有当前vid
+      this.setData({
+        alreadyFavored:false,
+      })
+    }
+    else{
+      this.setData({
+        alreadyFavored:true,
+      })
+    }
+
+    //加载视频
     videoPage = 1;
     pageArr = new Array();
     part_urls = {};
@@ -36,6 +146,7 @@ Page({
         videUrl: response[0],
       });
     });
+    
 
     //获取视频标题
     videoTitle.getVideoes(vid).then(function (response){
@@ -44,6 +155,29 @@ Page({
         videTitle: response,
       });
     });
+
+    //视频对象
+    options.videUrl = that.data.videUrl;
+    videoObj = options
+    
+    
+    //判断是否已经被记录
+    var historymvid = app.globalData.historymvid;
+    var hIndex = historymvid.indexOf(videoObj.vid)
+    if(hIndex==-1){
+      historymvid.push(videoObj.vid)
+      app.globalData.historymv.push(videoObj)
+    }
+    else{//如果已经被记录，删除原来的重新添加
+      historymvid.splice(hIndex,1); //删除
+      app.globalData.historymvid = historymvid;  //赋值到全局变量
+      app.globalData.historymv.splice(hIndex,1);
+
+      //重新添加
+      historymvid.push(videoObj.vid)
+      app.globalData.historymv.push(videoObj)
+    }
+    console.log(historymvid)
 
   },
 

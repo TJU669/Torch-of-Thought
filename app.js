@@ -34,10 +34,15 @@ App({
     })
   },
   globalData: {
-    userInfo: null,
-    wrongid:[],
-    totalid:[],
-    favorid:[],
-    score: 0,
+    userInfo: null,  //用户信息
+    wrongid:[],  //错题集
+    totalid:[],  //已回答问题
+    favorid:[],  //收藏集
+    score: 0,  //得分
+    likemvid:[], //点赞对象id
+    favormv:[], //科普、家国收藏对象
+    favormvid:[], //收藏对象的id
+    historymv:[], //历史记录
+    historymvid:[], //历史记录id
   }
 })

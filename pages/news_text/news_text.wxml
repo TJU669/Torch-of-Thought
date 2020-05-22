@@ -6,7 +6,9 @@
 </view>
 
 <view class="main">
-  <!-- 新闻列表 -->
+    <!-- 底图 -->
+    <!-- <image class="bkg" mode='widthFix' src='../../1.jpg'></image> -->
+    <!-- 新闻列表 -->
     <navigator url="../news_text_detail/news_text_detail?src={{item.url}}" class="news_item" wx:for="{{newsList}}" wx:key="index">
       <!-- 图片容器 -->
       <view class="news_img_wrap">

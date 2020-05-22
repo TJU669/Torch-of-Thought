@@ -1,1 +1,7 @@
+
+
+.main{
+  padding: 40rpx
+}
+
 @import "../../wxParse/wxParse.wxss";

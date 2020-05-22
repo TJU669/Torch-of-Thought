@@ -1,9 +1,12 @@
 {
   "pages": [
-
+    "pages/popSci/popSci",
+    "pages/favormv/favormv",
+    "pages/historymv/historymv",
+    
     "pages/welcome/welcome",
 
-    "pages/popSci/popSci",
+    
     "pages/patriotism/patriotism",
     "pages/wynews/wynews",
     "pages/wydetails/wydetails",

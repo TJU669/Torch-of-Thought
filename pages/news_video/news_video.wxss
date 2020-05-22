@@ -1,11 +1,15 @@
 page{
   color: #000;
   padding: 10rpx;
+  background-color: #f6f6f6
 }
 
+
 .head{
+  margin-top: 10rpx;
   display: flex;
   flex-direction: row;
+  margin-bottom: 10rpx;
 }
 
 .right_blank {
@@ -25,18 +29,28 @@ page{
 .main{
   display: flex;
   flex-wrap: wrap; 
-  margin-top: 30rpx;
   justify-content: space-between;
 }
 
 .video_item{
+  background-color: #fff;
+  /* border: 4rpx outset rgb(218, 213, 216); */
+  border-top: 4rpx solid #dddada;
+  border-bottom: 6rpx solid #cfcdcd;
+  border-radius: 3%;
+  margin-bottom: 10rpx;
+}
+
+.content{
+  height: 50%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30rpx;
+  margin-bottom:20rpx;
+  margin-top: 20rpx
 }
 
 .video_img_wrap{
-  width: 38%;
+  width: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +62,8 @@ page{
 }
 
 .video_title{
-  width: 60%;
-  font-size: 30rpx;
-  margin-right:35rpx;
+  width: 62%;
+  font-size: 31rpx;
+  margin-right:30rpx;
+  margin-bottom: 30rpx
 }
