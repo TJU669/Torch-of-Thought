@@ -5,13 +5,19 @@ page{
   }
   
   
-  .head{
-    margin-top: 10rpx;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10rpx;
-    opacity: 0.9;
-  }
+.head {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+  text-align: center;
+  width:100%;
+  height:80rpx;
+  /* padding: 25rpx; */
+  background-color: #00CED1;
+  border-bottom:solid 1px beige;
+}
   
   .right_blank {
      flex: 1;

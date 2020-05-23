@@ -1,4 +1,5 @@
   <view class="main">
+    <view class="head">共产生{{historynum}}条浏览记录</view>
     <!-- 视频列表 -->
     <view class="video_wrap">
       <navigator url="../videoPlay/videoPlay?vid={{item.vid}}&pic={{item.pic}}&title={{item.title}}" class="video_item" wx:for="{{currentList}}" wx:key="index">
@@ -13,5 +14,18 @@
           </view>
         </view>
       </navigator>
+      <view class="weui-slideview__right" style="width:207px;line-height:56px;">
+        <view class="weui-slideview__buttons">
+          <view class="weui-slideview__btn__wrp weui-slideview__btn-group_default" style="transform:translateX(-207px);">
+            <view class="weui-slideview__btn">普通</view>
+          </view>
+          <view class="weui-slideview__btn__wrp weui-slideview__btn-group_default" style="transform:translateX(-138px);">
+            <view class="weui-slideview__btn">普通</view>
+          </view>
+          <view class="weui-slideview__btn__wrp weui-slideview__btn-group_warn" style="transform:translateX(-69px);">
+            <view class="weui-slideview__btn">警示</view>
+          </view>
+        </view>
+      </view>
     </view>
   </view>

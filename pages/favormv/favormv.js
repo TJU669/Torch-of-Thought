@@ -27,6 +27,20 @@ Page({
    */
   onLoad: function (options) {
     this.getfavorList();
+
+    var favornum = app.globalData.favormvid.length
+    if(favornum==0){
+      wx.showModal({
+        title: '您的收藏为空',
+        content: '点击播放页右下方图标即可收藏',
+        showCancel: false,
+        cancelText: '取消',
+        confirmText: "了解",//默认是“确定”
+      });  
+    }
+    this.setData({
+      favornum: favornum,
+    })
   },
 
   /**

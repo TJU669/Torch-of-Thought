@@ -8,6 +8,7 @@ Page({
     historyList: [],
     currentList: [],
     currentPage: 1,
+    historynum:0
   },
 
   /** 
@@ -21,12 +22,28 @@ Page({
       historyList: historyList,
       currentList: historyList.slice(0,10)
     })
+
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.gethistoryList();
+    
+    var historynum = app.globalData.historymvid.length
+    if(historynum==0){
+      wx.showModal({
+        title: '您的浏览记录为空',
+        content: '访问视频后会在此产生记录',
+        showCancel: false,
+        cancelText: '取消',
+        confirmText: "了解",//默认是“确定”
+      });  
+    }
+    this.setData({
+      historynum: historynum,
+    })
   },
 
   /**

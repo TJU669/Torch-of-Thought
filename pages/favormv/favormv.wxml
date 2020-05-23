@@ -1,4 +1,5 @@
   <view class="main">
+  <view class="head">您收藏了{{favornum}}个视频</view>
     <!-- 视频列表 -->
     <view class="video_wrap">
       <navigator url="../videoPlay/videoPlay?vid={{item.vid}}&pic={{item.pic}}&title={{item.title}}" class="video_item" wx:for="{{currentList}}" wx:key="index">
